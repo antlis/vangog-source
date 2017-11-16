@@ -1,0 +1,73 @@
+// Sprite
+.advantage-icon {
+  display: block;
+  margin: 0 auto 40px auto;
+}
+
+.bg-decoration {
+    width: 77px; height: 77px;
+    background: url('../images/icons/icons_sprite.png') -107px -10px;
+}
+
+.bg-halls {
+    width: 77px; height: 77px;
+    background: url('../images/icons/icons_sprite.png') -204px -10px;
+}
+
+.bg-triangle_down {
+    width: 6px; height: 4px;
+    background: url('../images/icons/icons_sprite.png') -170px -204px;
+}
+
+.bg-technique {
+    width: 77px; height: 77px;
+    background: url('../images/icons/icons_sprite.png') -107px -107px;
+}
+
+.bg-phone {
+    width: 11px; height: 11px;
+    background: url('../images/icons/icons_sprite.png') -139px -204px;
+}
+
+.bg-photos {
+    width: 77px; height: 77px;
+    background: url('../images/icons/icons_sprite.png') -10px -10px;
+}
+
+.bg-collab {
+    width: 77px; height: 77px;
+    background: url('../images/icons/icons_sprite.png') -10px -107px;
+}
+
+.bg-map {
+    width: 9px; height: 12px;
+    background: url('../images/icons/icons_sprite.png') -104px -235px;
+}
+
+.bg-mail {
+    width: 15px; height: 11px;
+    background: url('../images/icons/icons_sprite.png') -104px -204px;
+}
+
+.bg-organization {
+    width: 74px; height: 74px;
+    background: url('../images/icons/icons_sprite.png') -10px -204px;
+}
+
+.bg-schedule {
+    width: 75px; height: 75px;
+    background: url('../images/icons/icons_sprite.png') -204px -107px;
+}
+
+.info-wrap {
+  position: relative;
+  padding-left: 15px;
+}
+
+.info-icon {
+  display: inline-block;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  margin-top: -6px;
+}
