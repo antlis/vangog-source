@@ -1,0 +1,36 @@
+mixin nav
+    nav.navbar.navbar-expand-lg.w-100
+      a.navbar-brand.sr-only(href='#') Навигация по сайту
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.w-100.nav-justified
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | О компании&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Наша фотостудия
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Аренда залов&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Фотосессии&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item
+            a.nav-link(href='#') Правила
+          li.nav-item
+            a.nav-link(href='#') Портфолио
+          li.nav-item
+            a.nav-link(href='#') Контакты
+            
+mixin photoCard(photoNum)
+    .col-4.align-self-center.p-4
+      img.img-fluid(src="/images/photos/photo_" + photoNum + ".jpg", alt="Фото " + photoNum)

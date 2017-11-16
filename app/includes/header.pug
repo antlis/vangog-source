@@ -1,0 +1,51 @@
+.header-container
+  header.main-header.container
+    .d-flex.flex-row.justify-content-between
+      .p-4.align-self-center
+        .info-wrap
+          i.info-icon.bg-phone
+          p.header-phone
+            | телефон администратора
+            br
+            strong 8 800 2000 600
+      .p-4
+        a(href='/')
+          img(src='/images/logo.png', alt='Van Gog')
+      .p-4.align-self-center
+        .info-wrap
+          i.info-icon.bg-map
+          p.header-address
+            | адрес фотостудии
+            br
+            strong Челябинск, Худякова, 12а
+    nav.navbar.navbar-expand-lg.w-100
+      a.navbar-brand.sr-only(href='#') Навигация по сайту
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.w-100.nav-justified
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | О компании&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Наша фотостудия
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Аренда залов&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Фотосессии&nbsp;
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Отзывы
+              a.dropdown-item(href='#') Частые вопросы
+          li.nav-item
+            a.nav-link(href='#') Правила
+          li.nav-item
+            a.nav-link(href='#') Портфолио
+          li.nav-item
+            a.nav-link(href='#') Контакты
