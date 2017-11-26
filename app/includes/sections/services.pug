@@ -1,0 +1,7 @@
+- var photos = ['Семейная \n Фотосессия','Детская \n Фотосессия','Индивидуальная \n Фотосессия','Свадебная \n Фотосессия','Love Story \n Фотосессия','Для беременных \n Фотосессия','Бизнес \n Портрет','Рекламная \n Съемка','Репортажная \n Съемка','Фото \n Проекты'];
+
+section#services.main-section
+  +sectionHeader('Услуги', 'Фотосессии', '#0')
+  .services-inner
+    each val, index in photos
+        +photoCard(index + 1, val)

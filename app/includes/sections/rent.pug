@@ -1,0 +1,32 @@
+section#rent.main-section
+    +sectionHeader('аренда', 'Наши залы')
+    .d-flex.flex-row
+        .col-6
+            img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
+    footer.rent-footer.col-12
+        .d-flex.no-gutters
+            .col-6
+                a.d-flex.align-items-center.btn-rent(href="#0")
+                    .col-4
+                        | Организация мероприятий в наших залах
+                    .col-4
+                        svg.svg-icon
+                            use.rent-svg-icon(xlink:href='#right-arrow')
+                    .col-4
+                        i.rent-icon.bg-organization
+            .col-6
+                a.d-flex.align-items-center.btn-rent(href="#0")
+                    .col-4
+                        | Расписание и бронирование залов
+                    .col-4
+                        svg.svg-icon
+                            use.rent-svg-icon(xlink:href='#right-arrow')
+                    .col-4
+                        i.rent-icon.bg-schedule
+        .d-flex.rent-footer-bottom.align-items-center.my-auto.justify-content-center
+            .col-4
+                +phone
+            .col-4
+                +mail
+            .col-4
+                +address

@@ -2,10 +2,48 @@
 @import "typography";
 
 // bower:scss
-@import "bower_components/bootstrap/scss/bootstrap.scss";
+// @import "bower_components/bootstrap/scss/bootstrap.scss";
+
+@import "bower_components/bootstrap/scss/functions";
+@import "bower_components/bootstrap/scss/variables";
+@import "custom";
+@import "bower_components/bootstrap/scss/mixins";
+@import "bower_components/bootstrap/scss/print";
+@import "bower_components/bootstrap/scss/reboot";
+@import "bower_components/bootstrap/scss/type";
+@import "bower_components/bootstrap/scss/images";
+// @import "bower_components/bootstrap/scss/code";
+@import "bower_components/bootstrap/scss/grid";
+// @import "bower_components/bootstrap/scss/tables";
+// @import "bower_components/bootstrap/scss/forms";
+@import "bower_components/bootstrap/scss/buttons";
+@import "bower_components/bootstrap/scss/transitions";
+@import "bower_components/bootstrap/scss/dropdown";
+// @import "bower_components/bootstrap/scss/button-group";
+// @import "bower_components/bootstrap/scss/input-group";
+// @import "bower_components/bootstrap/scss/custom-forms";
+@import "bower_components/bootstrap/scss/nav";
+@import "bower_components/bootstrap/scss/navbar";
+// @import "bower_components/bootstrap/scss/card";
+// @import "bower_components/bootstrap/scss/breadcrumb";
+// @import "bower_components/bootstrap/scss/pagination";
+// @import "bower_components/bootstrap/scss/badge";
+// @import "bower_components/bootstrap/scss/jumbotron";
+// @import "bower_components/bootstrap/scss/alert";
+// @import "bower_components/bootstrap/scss/progress";
+@import "bower_components/bootstrap/scss/media";
+// @import "bower_components/bootstrap/scss/list-group";
+// @import "bower_components/bootstrap/scss/close";
+// @import "bower_components/bootstrap/scss/modal";
+// @import "bower_components/bootstrap/scss/tooltip";
+// @import "bower_components/bootstrap/scss/popover";
+@import "bower_components/bootstrap/scss/carousel";
+@import "bower_components/bootstrap/scss/utilities";
 // endbower
 
 @import "sprite";
+
+$headerHeight:  234px;
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -15,6 +53,14 @@
 }
 
 // Custom
+.hidden {
+  display: none;
+}
+
+.header-top {
+  margin: 0 5%;
+}
+
 .header-phone, .header-address {
   color: #b9b9ba;
 }
@@ -29,9 +75,9 @@ body {
   font-size: 14px;
 }
 
-.header-container {
-  background-image: url(../images/top_slide.jpg);
-  background-repeat: no-repeat;
+.page-top {
+  min-height: 100vh;
+  background: url(../images/top_slide.jpg) no-repeat center top;
   background-size: cover;
 }
 
@@ -40,46 +86,53 @@ body {
 }
 
 // Carousel
-.carousel-top-wrap {
-  min-height: calc(100vh - 234px);
-  background-image: url(../images/top_slide.jpg);
-  background-position: center -234px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.carousel-control-next {
-  right: -150px;
-}
-
-.carousel-control-prev {
-  left: -150px;
-}
-
-.carousel-top {
-  .carousel-item {
-    
+.carousel-content {
+  color: $white;
+  p {
+    margin: 25px 0 45px 0;
   }
 }
 
 .carousel-content {
-  color: white;
+  min-height: calc(100vh - 234px);
   display: flex;
-  overflow: hidden;
-  padding: 0 90px;
+  padding-left: 10%;
+  align-items: center;
+  padding: 50px 10% 50px 10%;
+}
+
+.carousel-control-next {
+  margin-right: -15%;
+}
+
+.carousel-control-prev {
+  margin-left: -15%;
+}
+
+.carousel-indicators li {
+  margin: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 3px solid red;
+  cursor: pointer;
+  &:hover {
+    background: $hover-orange;
+  }
 }
 // Carousel
 
 .navbar {
   background: #080425;
   padding: 0;
+  z-index: 200;
   a {
     padding-top: 30px;
     padding-bottom: 30px;
-    color: #fff;
+    color: $white;
     &:hover {
       background: #211e3b;
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -129,7 +182,7 @@ body {
 }
 
 .section-title {
-  color: #080425;
+  color: $dark-blue;
   margin-bottom: 40px;
   margin-top: 15px;
 }
@@ -140,7 +193,7 @@ body {
   padding: 15px;
   color: #a17622;
   cursor: pointer;
-  &:hover {
+  @include setLinkSelectorStyle {
     background: #d39500;
   }
 }
@@ -170,5 +223,184 @@ body {
   padding-left: 42px;
   background: url(../images/logo_tian.png) no-repeat left center;
   float: right;
+  a {
+    text-decoration: underline;
+    @include setLinkStyleAll {
+      color: #8f8e95;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
+.btn-rent {
+  height: 140px;
+  background: #fab91e;
+  color: #080425;
+  &:hover {
+    text-decoration: none;
+    color: #080425;
+    background: #d39500;
+  }
+}
+
+.rent-icon {
+  @extend .advantage-icon;
+  margin: 0;
+}
+
+.svg-icon {
+  height: 20px;
+  width: 20px;
+}
+
+svg path  {
+  fill: inherit;
+}
+
+.rent-svg-icon {
+  fill: #815e22;
+}
+
+.photo-wrap .svg-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+}
+
+.photo-svg-icon {
+  fill: #815e22;
+}
+
+.rent-footer {
+  margin-top: 120px;
+}
+
+.rent-footer-bottom {
+  min-height: 140px;
+  p {
+    margin: 0;
+    &, a {
+       color: #080425; 
+    }
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 1px solid #fab91e;
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.about-inner p {
+  font-size: 18px;
+}
+
+.about-info {
+  margin: auto auto 50px auto;
+  @extend .col-10;
+}
+
+.photo-wrap {
+  position: relative;
+  figcaption {
+    position: absolute;
+    width: 80%;
+    background: #fff;
+    bottom: -45px;
+    right: 0;
+    .photo-title {
+      white-space: pre-line;
+      padding-top: 40px;
+      padding-left: 40px;
+      padding-bottom: 10px;
+      display: inline-block;
+      color: $dark-blue;
+      &:hover {
+        text-decoration: none;
+        color: $hover-orange;
+      }
+    }
+    .photo-arrow-link {
+      position: absolute;
+      line-height: 44px;
+      height: 44px;
+      width: 44px;
+      text-align: center;
+      background: $inactive-orange;
+      left: 0;
+      margin-left: -44px;
+      bottom: 1px;
+      &:hover {
+        background: $hover-orange;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .navbar-dark .navbar-toggler {
+    position: absolute;
+    top: -105px;
+    border-color: transparent;
+  }
+  .header-top {
+    margin: 0;
+    & > :first-child {
+      visibility: hidden;
+    }
+  }
+}
+
+
+// Bootstrap classes extends
+.main-nav {
+  @extend .navbar,
+  .navbar-dark,
+  .navbar-expand-lg,
+  .w-100;
+  ul {
+    @extend .navbar-nav,
+    .w-100,
+    .nav-justified;
+  }
+  li {
+    @extend .nav-item;
+  }
+}
+
+.advantages-inner {
+  @extend .d-flex,
+  .flex-row,
+  .justify-content-between,
+  .justify-content-md-center,
+  .justify-content-sm-center,
+  .flex-wrap;
+  section {
+    @extend .p-4,
+    .col-md-4,
+    .col-sm-8,
+    .text-center;
+  }
+}
+
+.about-inner {
+  @extend .d-flex,
+  .flex-row,
+  .justify-content-center,
+  .text-center;
+}
+
+.about-content {
+  @extend .col-12,
+  .col-sm-10;
+}
+
+.services-inner {
+  @extend .d-flex,
+  .flex-row,
+  .flex-wrap;
+}

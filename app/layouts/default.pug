@@ -1,14 +1,14 @@
 include ../includes/mixins
+include ../includes/meta
 
 doctype html
-html.no-js(lang='')
+html.no-js(lang='ru')
   head
     meta(charset='utf-8')
-    meta(name='description', content='')
+    meta(name='description', content=desc)
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    title workspace
-    link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    // Place favicon.ico in the root directory
+    title= title
+    +favicon
     // build:css styles/vendor.css
     // bower:css
     // endbower
@@ -20,132 +20,24 @@ html.no-js(lang='')
     script(src='/bower_components/modernizr/modernizr.js')
     // endbuild
   body
-    //if IE
+    include ../images/icons/svg/sprite.svg
+    //if lt IE 9
       p.browserupgrade
-        | You are using an 
-        strong outdated
-        |  browser. Please 
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  to improve your experience.
-    include ../includes/header
-    .carousel-top-wrap
-      .container
-        #myCarousel.carousel.carousel-top.slide.bg-inverse.w-100.ml-auto.mr-auto(data-ride='carousel')
-          ol.carousel-indicators
-            li.active(data-target='#myCarousel', data-slide-to='0')
-            li(data-target='#myCarousel', data-slide-to='1')
-            li(data-target='#myCarousel', data-slide-to='2')
-          .carousel-inner(role='listbox')
-            .carousel-item.active
-              section.carousel-content
-                .carousel-content-inner
-                  h2.slide-title Детские фотосессии<br /> по разумным ценам
-                  p
-                    | Забронируйте фотосъёмку и получите скидку 50% на следующую фотосессию для всей семьи!
-                  button.btn.btn-custom(type='button') Арендовать зал
-                  button.btn.btn-custom(type='button') Заказать съёмку
-            .carousel-item
-              section.carousel-content
-                .carousel-content-inner
-                  h2.slide-title
-                    | Детские фотосессии
-                    br
-                    |  по разумным ценам
-                  p
-                    | Забронируйте фотосъёмку и получите скидку 50% на следующую фотосессию для всей семьи!
-                  button.btn.btn-custom(type='button') Арендовать зал
-                  button.btn.btn-custom(type='button') Заказать съёмку
-            .carousel-item
-              section.carousel-content
-                .carousel-content-inner
-                  h2.slide-title
-                    | Детские фотосессии
-                    br
-                    |  по разумным ценам
-                  p
-                    | Забронируйте фотосъёмку и получите скидку 50% на следующую фотосессию для всей семьи!
-                  button.btn.btn-custom(type='button') Арендовать зал
-                  button.btn.btn-custom(type='button') Заказать съёмку
-          a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
-            span.carousel-control-prev-icon(aria-hidden='true')
-            span.sr-only Previous
-          a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
-            span.carousel-control-next-icon(aria-hidden='true')
-            span.sr-only Next
+        Вы используете <strong>устаревший</strong> браузер.
+        Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>
+        для полноценного взаимодействия с сайтом.
+    
+    .page-top
+      include ../includes/header
+      include ../includes/sections/carousel
+    
     main.main-content
       .container
-        section#section-advantages.main-section
-          header.main-section-header
-            p.title-icon Наши преимущества
-            h3.section-title 5 причин прийти к нам
-          .d-flex.flex-row.justify-content-between
-            section.p-4.col-sm-4.text-center
-              i.advantage-icon.bg-decoration
-              h4.advantage-title Современные декорации
-              p
-                | Мы постоянно совершенствуемся, основываясь на мировых  тенденциях, практичности и пожеланиях наших клиентов.
-            section.p-4.col-sm-4.text-center
-              i.advantage-icon.bg-halls
-              h4.advantage-title 6 различных залов
-              p
-                | От классики до футуризма, все для вашего творчества и реализации всех, даже самых сложных творческих идей.
-            section.p-4.col-sm-4.text-center
-              i.advantage-icon.bg-photos
-              h4.advantage-title Профессиональные фотографы
-              p
-                | Наши фотографы работают во всех популярных видах жанра фотографии и обеспечивают качественный результат.
-          .d-flex.flex-row.justify-content-md-center
-            section.p-4.col-sm-4.text-center
-              i.advantage-icon.bg-technique
-              h4.advantage-title Профессиональная техника
-              p
-                | Фотостудия имеет профессиональную технику и свет для сьёмки, есть все необходимое для комфортной работы и получения желаемого результата.
-            section.p-4.col-sm-4.text-center
-              i.advantage-icon.bg-collab
-              h4.advantage-title Открыты для сотрудничества
-              p
-                | Мы открыты для сотрудничества, проводим мастер-классы фотографов, семинары, выездные регистрации, воркшопы и т.д.
-        section#section-about.main-section.section-bg
-          header.main-section-header
-            p.title-icon О компании
-            h3.section-title Наша фотостудия
-            p
-              em.section-sub-emphasis
-                | Van Gog фотостудия это творческое  арт - пространство для реализации любых идей и задач!
-            p
-              | Это не просто студия для сьемки, это целый комплекс услуг для вас и ваших близких!
-              br
-              br
-              | Мы работаем по системе «все включено», обратившись к нам вам нужно только одно, рассказать,
-              | что вы хотите, а мы в свою очередь предложим варианты фотосъемки и варианты для реализации ваших идей.
-            button.btn.btn-custom(type='button') Больше о фотостудии
-        
-        section#section-services.main-section
-          header.main-section-header
-            p.title-icon Услуги
-            h3.section-title Фотосессии
-          .d-flex.flex-row.flex-wrap
-            - for(var i = 1; i < 11; i++)
-                +photoCard(i)
-
-        section#section-rent.main-section
-          header.main-section-header
-            p.title-icon аренда
-            h3.section-title Наши залы
-            .d-flex.flex-row
-                .col-6
-                    img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
+        block content
     
     include ../includes/footer
     
-    // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+    +ga
     // build:js scripts/vendor.js
     // bower:js
     script(src='/bower_components/modernizr/modernizr.js')
@@ -155,16 +47,16 @@ html.no-js(lang='')
     // endbuild
     // build:js scripts/plugins.js
     script(src='/bower_components/bootstrap/js/dist/util.js')
-    script(src='/bower_components/bootstrap/js/dist/alert.js')
+    // script(src='/bower_components/bootstrap/js/dist/alert.js')
     script(src='/bower_components/bootstrap/js/dist/button.js')
     script(src='/bower_components/bootstrap/js/dist/carousel.js')
     script(src='/bower_components/bootstrap/js/dist/collapse.js')
     script(src='/bower_components/bootstrap/js/dist/dropdown.js')
-    script(src='/bower_components/bootstrap/js/dist/modal.js')
-    script(src='/bower_components/bootstrap/js/dist/scrollspy.js')
-    script(src='/bower_components/bootstrap/js/dist/tab.js')
-    script(src='/bower_components/bootstrap/js/dist/tooltip.js')
-    script(src='/bower_components/bootstrap/js/dist/popover.js')
+    // script(src='/bower_components/bootstrap/js/dist/modal.js')
+    // script(src='/bower_components/bootstrap/js/dist/scrollspy.js')
+    // script(src='/bower_components/bootstrap/js/dist/tab.js')
+    // script(src='/bower_components/bootstrap/js/dist/tooltip.js')
+    // script(src='/bower_components/bootstrap/js/dist/popover.js')
     // endbuild
     // build:js scripts/main.js
     script(src='scripts/main.js')
