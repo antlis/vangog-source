@@ -8,6 +8,7 @@ html.no-js(lang='ru')
     meta(name='description', content=desc)
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     title= title
+    +social
     +favicon
     // build:css styles/vendor.css
     // bower:css
@@ -21,11 +22,7 @@ html.no-js(lang='ru')
     // endbuild
   body
     include ../images/icons/svg/sprite.svg
-    //if lt IE 9
-      p.browserupgrade
-        Вы используете <strong>устаревший</strong> браузер.
-        Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>
-        для полноценного взаимодействия с сайтом.
+    +browserHappy
     
     .page-top
       include ../includes/header
@@ -38,6 +35,7 @@ html.no-js(lang='ru')
     include ../includes/footer
     
     +ga
+    +jsonLD
     // build:js scripts/vendor.js
     // bower:js
     script(src='/bower_components/modernizr/modernizr.js')
@@ -57,6 +55,7 @@ html.no-js(lang='ru')
     // script(src='/bower_components/bootstrap/js/dist/tab.js')
     // script(src='/bower_components/bootstrap/js/dist/tooltip.js')
     // script(src='/bower_components/bootstrap/js/dist/popover.js')
+    script(src='/bower_components/jquery-touchswipe/jquery.touchSwipe.js')
     // endbuild
     // build:js scripts/main.js
     script(src='scripts/main.js')

@@ -1,17 +1,10 @@
-.header-container
-  header.main-header.container
-    .d-flex.flex-row.justify-content-between.header-top
-      .p-4.align-self-center
-        .info-wrap
-            +phone
-      .p-4
-        a(href='/')
-          img(src='/images/logo.png', alt='Van Gog')
-      .p-4.align-self-center
-        .info-wrap
-          i.info-icon.bg-map
-          p.header-address
-            | адрес фотостудии
-            br
-            strong Челябинск, Худякова, 12а
-    include nav
+header.main-header
+  .header-top
+    +contactPhone
+    h1.logo.contact-block
+      a(href='/')
+        img(src='/images/logo.png', alt='Van Gog')
+        img.logo-mobile(src='/images/logo_mobile_c.png', alt='Van Gog')
+    +contactAddress
+    +collapse
+  include nav

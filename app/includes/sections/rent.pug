@@ -1,32 +1,48 @@
 section#rent.main-section
     +sectionHeader('аренда', 'Наши залы')
-    .d-flex.flex-row
-        .col-6
-            img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
-    footer.rent-footer.col-12
-        .d-flex.no-gutters
-            .col-6
-                a.d-flex.align-items-center.btn-rent(href="#0")
-                    .col-4
+    .row.bottom-carousel-container.justify-content-sm-center
+        .col-md-6.col-sm-8.order-sm-2.order-md-1
+            .bottom-carousel-wrap
+                #BottomCarousel.carousel.carousel-top.slide(data-ride='carousel')
+                    .carousel-inner
+                        .carousel-item.active
+                            img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
+                        .carousel-item
+                            img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
+                        .carousel-item
+                            img.img-fluid(src='/images/halls_slider/halls_slide_1.jpg', alt="Зал 1")
+                .bottom-carousel-controls
+                    a.carousel-control-prev(href='#BottomCarousel', role='button', data-slide='prev')
+                      svg.svg-icon
+                          use.photo-svg-icon(xlink:href='#right-arrow')
+                    a.carousel-control-next(href='#BottomCarousel', role='button', data-slide='next')
+                      svg.svg-icon
+                          use.photo-svg-icon(xlink:href='#left-arrow')
+        .col-md-6.d-flex.order-sm-1.order-md-2.col-sm-8
+            .rent-slide-content.d-flex.flex-column.justify-content-center
+                .rent-slide-content-inner
+                    h4.rent-slide-title Футуризм
+                    p Просторный, светлый зал, выполненный в стиле футуризм и модерн.
+                    +btnLink('#0', 'Узнать больше о зале')
+    footer.rent-footer
+        .row.justify-content-sm-center
+            .col-md-6.col-sm-8.col-12
+                a.btn-rent(href="#0")
+                    .col-6
                         | Организация мероприятий в наших залах
-                    .col-4
+                    .col-6.d-flex.align-items-center.justify-content-end
                         svg.svg-icon
                             use.rent-svg-icon(xlink:href='#right-arrow')
-                    .col-4
                         i.rent-icon.bg-organization
-            .col-6
-                a.d-flex.align-items-center.btn-rent(href="#0")
-                    .col-4
+            .col-md-6.col-sm-8.col-12
+                a.btn-rent(href="#0")
+                    .col-6
                         | Расписание и бронирование залов
-                    .col-4
+                    .col-6.d-flex.align-items-center.justify-content-end
                         svg.svg-icon
                             use.rent-svg-icon(xlink:href='#right-arrow')
-                    .col-4
                         i.rent-icon.bg-schedule
-        .d-flex.rent-footer-bottom.align-items-center.my-auto.justify-content-center
-            .col-4
-                +phone
-            .col-4
-                +mail
-            .col-4
-                +address
+        .rent-contacts
+            +contactPhone
+            +contactEmail
+            +contactAddress

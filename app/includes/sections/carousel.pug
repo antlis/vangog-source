@@ -1,41 +1,41 @@
-.carousel-top-wrap
-  .container
-    #myCarousel.carousel.carousel-top.slide.bg-inverse.w-100.ml-auto.mr-auto(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
-      .carousel-inner(role='listbox')
-        .carousel-item.active
-          section.carousel-content
-            .carousel-content-inner
-              h2.slide-title Детские фотосессии<br /> по разумным ценам
-              p
-                | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
-              footer.slide-footer
-                button.btn.btn-custom(type='button') Арендовать зал
-                button.btn.btn-custom(type='button') Заказать съёмку
-        .carousel-item
-          section.carousel-content
-            .carousel-content-inner
-              h2.slide-title Семейные фотосессии <br /> по разумным ценам
-              p
-                | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
-              footer.slide-footer
-                button.btn.btn-custom(type='button') Арендовать зал
-                button.btn.btn-custom(type='button') Заказать съёмку
-        .carousel-item
-          section.carousel-content
-            .carousel-content-inner
-              h2.slide-title Индивидуальная<br /> фотосессия<br /> по разумной цене
-              p
-                | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
-              footer.slide-footer
-                button.btn.btn-custom(type='button') Арендовать зал
-                button.btn.btn-custom(type='button') Заказать съёмку
-      a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.sr-only Previous
-      a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.sr-only Next
+.container
+  #myCarousel.carousel.carousel-top.slide.bg-inverse.w-100.ml-auto.mr-auto(data-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-target='#myCarousel', data-slide-to='0')
+      li(data-target='#myCarousel', data-slide-to='1')
+      li(data-target='#myCarousel', data-slide-to='2')
+    .carousel-inner(role='listbox')
+      .carousel-item.active
+        section.carousel-content
+          .carousel-content-inner
+            h2.slide-title Детские фотосессии<br /> по разумным ценам
+            p
+              | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
+            footer.slide-footer
+              +btnLink('#0', 'Арендовать зал')
+              +btnLink('#0', 'Заказать съёмку')
+      .carousel-item
+        section.carousel-content
+          .carousel-content-inner
+            h2.slide-title Семейные фотосессии <br /> по разумным ценам
+            p
+              | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
+            footer.slide-footer
+              +btnLink('#0', 'Арендовать зал')
+              +btnLink('#0', 'Заказать съёмку')
+      .carousel-item
+        section.carousel-content
+          .carousel-content-inner
+            h2.slide-title Индивидуальная<br /> фотосессия<br /> по разумной цене
+            p
+              | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
+            footer.slide-footer
+              +btnLink('#0', 'Арендовать зал')
+              +btnLink('#0', 'Заказать съёмку')
+    a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
+      svg.svg-icon
+          use.photo-svg-icon(xlink:href='#left-arrow')
+    a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
+      svg.svg-icon
+          use.photo-svg-icon(xlink:href='#right-arrow')
+    a.mouse(href="#")

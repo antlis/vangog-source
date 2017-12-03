@@ -1,5 +1,24 @@
-- var desc = 'VAN GOG фотостудия';
+- var desc = 'Наши фотографы работают во всех популярных видах жанра фотографии и обеспечивают качественный результат.';
 - var title = 'VAN GOG - фотостудия';
+
+mixin social
+    meta(name='keywords', content='фотостудия')
+    meta(name='image', content='http://res.cloudinary.com/dvbyognrh/image/upload/v1512212015/random/logo_dark_bg.png')
+    meta(name='original-source', content='https://website.com')
+    link(rel='canonical', href='https://website.com')
+    meta(property='og:locale', content='ru_RU')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=desc)
+    meta(property='og:url', content='https://website.com')
+    meta(property='og:site_name', content=title)
+    meta(property='og:image', content='https://website.com/images/website_image.png')
+    meta(property='og:image:secure_url', content='https://website.com/images/website_image.png')
+    meta(name='twitter:title', content=title)
+    meta(name='twitter:image', content='https://website.com/images/website_image.png')
+    meta(name='twitter:description', content=desc)
+    meta(name='twitter:card', content='summary_large_image')
+    meta(name='twitter:site', content='@WebsiteName')
 
 mixin favicon
     link(rel='apple-touch-icon', sizes='57x57', href='/apple-icon-57x57.png')
@@ -29,3 +48,9 @@ mixin ga
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+      
+mixin jsonLD
+    script(type='application/ld+json').
+      {"@context": "http://schema.org", "@type": "WebSite", "url": "", "name": "VAN GOG - фотостудия", "author":{"@type": "Person", "name": ""}, "description": "Наши фотографы работают во всех популярных видах жанра фотографии и обеспечивают качественный результат.", "publisher": ""}
+    script(type='application/ld+json').
+      {"@context": "http://schema.org", "@type": "Organization", "url": "", "sameAs": [ "https://www.facebook.com//", "https://www.instagram.com//", "https://twitter.com/"], "@id": "#organization", "name": "VAN GOG - фотостудия", "logo": "http://res.cloudinary.com/dvbyognrh/image/upload/v1512212015/random/logo_dark_bg.png"}

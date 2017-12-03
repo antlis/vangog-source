@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "modernizr": "~2.8.1",
-    "bootstrap": "v4.0.0-beta"
+    "bootstrap": "v4.0.0-beta",
+    "jquery-touchswipe": "^1.6.18"
   }
 }

@@ -52,6 +52,8 @@
 $dark-blue: rgb(8, 4, 37);
 $inactive-orange: #fab91e;
 $hover-orange: #d39500;
+$btn-color: #815e22;
+$btn-hover: #6d4c13;
 // Custom colors
 
 $white:  #fff !default;
@@ -114,7 +116,7 @@ $theme-colors: (
   danger: $red,
   light: $gray-100,
   dark: $gray-800
-) !default;
+) ;
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
@@ -329,8 +331,8 @@ $table-inverse-color:           $body-bg !default;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$input-btn-padding-y:       .5rem !default;
-$input-btn-padding-x:       .75rem !default;
+$input-btn-padding-y:       1.1rem;
+$input-btn-padding-x:       1.25rem;
 $input-btn-line-height:     1.25 !default;
 
 $input-btn-padding-y-sm:    .25rem !default;
@@ -351,9 +353,13 @@ $btn-link-disabled-color:        $gray-600 !default;
 $btn-block-spacing-y:            .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:              $border-radius !default;
-$btn-border-radius-lg:           $border-radius-lg !default;
-$btn-border-radius-sm:           $border-radius-sm !default;
+
+// $btn-border-radius:              $border-radius !default;
+// $btn-border-radius-lg:           $border-radius-lg !default;
+// $btn-border-radius-sm:           $border-radius-sm !default;
+$btn-border-radius:              0;
+$btn-border-radius-lg:           0;
+$btn-border-radius-sm:           0;
 
 $btn-transition:                 all .15s ease-in-out !default;
 
@@ -817,8 +823,8 @@ $carousel-caption-color:                      $white !default;
 
 $carousel-control-icon-width:                 20px !default;
 
-// $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23") !default;
-// $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23");
+$carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23");
 
 $carousel-transition:           transform .6s ease !default;
 

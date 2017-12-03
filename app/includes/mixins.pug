@@ -1,5 +1,26 @@
+mixin browserHappy
+    //if lt IE 9
+      p.browserupgrade
+        Вы используете <strong>устаревший</strong> браузер.
+        Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>
+        для полноценного взаимодействия с сайтом.
+
+mixin btnLink(href, txt)
+    a.btn.btn-primary(href=href)= txt
+
+mixin carouselSlide(active)
+  .carousel-item(class=active)
+    section.carousel-content
+      .carousel-content-inner
+        h2.slide-title Детские фотосессии<br /> по разумным ценам
+        p
+          | Забронируйте фотосъёмку и получите скидку 50%<br /> на следующую фотосессию для всей семьи!
+        footer.slide-footer
+          +btnLink('#0', 'Арендовать зал')
+          +btnLink('#0', 'Заказать съёмку')
+
 mixin photoCard(photoNum, info, linkHref)
-    .col-sm-8.col-md-4.align-self-center.p-5
+    .photo-card
       figure.photo-wrap
         img.img-fluid(src="/images/photos/photo_" + photoNum + ".jpg", alt="Фото " + photoNum)
         figcaption
@@ -19,20 +40,30 @@ mixin advantage(icon, title, content)
       h4.advantage-title= title
       p= content
 
-mixin phone
-    i.info-icon.bg-phone
-    p.header-phone
-        | телефон администратора
-        br
-        strong 8 800 2000 600
-
-mixin address
-    i.info-icon.bg-map
-    p.header-address
-        | адрес фотостудии
-        br
-        strong Челябинск, Худякова, 12а
-
-mixin mail
-    i.info-icon.bg-mail
-    p e-mail<br /><a href="mailto:vangog.fotostudia@yandex.ru">vangog.fotostudia@yandex.ru</a>
+mixin contact(className, iconClass, contactFirstLine, contactSecondLine, link, phone)
+    .contact-block(class=className)
+        .contact-item
+            .contact-item-content
+                i(class=iconClass).info-icon
+                p= contactFirstLine
+                    br
+                    if link
+                        a(href=contactSecondLine)= contactSecondLine
+                    else if phone
+                        a(href=phone)
+                            strong= contactSecondLine
+                    else
+                        strong= contactSecondLine
+                
+mixin contactPhone
+    +contact('contact-phone-block', 'bg-phone', 'телефон администратора', '8 800 2000 600', false, 'tel:+78002000600')
+    
+mixin contactAddress
+    +contact('contact-address-block', 'bg-map', 'адрес фотостудии', 'Челябинск, Худякова, 12а')
+    
+mixin contactEmail
+    +contact('contact-email-block', 'bg-mail', 'e-mail', 'vangog.fotostudia@yandex.ru', true)
+    
+mixin collapse
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon

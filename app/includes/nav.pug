@@ -1,9 +1,9 @@
 nav.main-nav
   a.navbar-brand.sr-only(href='#') Навигация по сайту
-  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-    span.navbar-toggler-icon
   #navbarNav.collapse.navbar-collapse
     ul
+      li.nav-logo-text 
+        a.nav-link(href='/') Van Gog Фотостудия
       li.dropdown
         a#aboutDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
           | О компании&nbsp;
@@ -29,3 +29,7 @@ nav.main-nav
         a.nav-link(href='#0') Портфолио
       li
         a.nav-link(href='#0') Контакты
+      li.nav-contact
+        +contactPhone
+      li.nav-contact
+        +contactAddress
