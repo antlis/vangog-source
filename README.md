@@ -16,6 +16,8 @@ Bootstrap carousel touch support - https://github.com/mattbryson/TouchSwipe-Jque
 
 ![VAN GOG Screenshot](./screenshot.png)
 
-[Demo]()
+[Demo](https://tomatos.neocities.org/)
 
-[Source]()
+[Source](https://github.com/antlis/vangog-source)
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftomatos.neocities.org%2F)

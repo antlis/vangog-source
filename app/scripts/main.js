@@ -16,7 +16,7 @@ jQuery(function($) {
    });
    
    //Enable swiping...
-   $(".carousel-inner").swipe({
+   $('.carousel-inner').swipe({
       //Generic swipe handler for all directions
       swipeLeft: function(event, direction, distance, duration, fingerCount) {
          $(this).parent().carousel('next');

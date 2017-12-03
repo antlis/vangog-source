@@ -70,6 +70,14 @@ body {
   @extend %font14;
 }
 
+.header-top {
+  @extend %font-gotham-pro-med;
+}
+
+.btn.btn-primary {
+  @extend %font-gotham-pro-med;
+}
+
 .btn-rent {
   @extend %font-playfair;
   @extend %font16;
@@ -87,7 +95,7 @@ body {
 
 .carousel-content p {
   @extend %font-gotham-pro;
-  @extend %font14;
+  @extend %font18;
 }
 
 .contact-item {
@@ -144,4 +152,11 @@ body {
 
 .about-inner p {
   @extend %font18;
+}
+
+.rent-contacts {
+  @extend %font-gotham-pro;
+  a, strong {
+    @extend %font-gotham-pro-med;
+  }
 }
