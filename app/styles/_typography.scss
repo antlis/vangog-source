@@ -53,6 +53,18 @@
   font-family: 'Playfair Display', serif;
 }
 
+%font-proxima-semibold {
+  font-family: ProximaNovaSemiBold, serif;
+}
+
+%font-proxima {
+  font-family: ProximaNova, serif;
+}
+
+%font-proxima-bold  {
+  font-family: ProximaNovaBold, serif;
+}
+
 %font18 {
   font-size: 18px;
 }
@@ -66,7 +78,7 @@
 }
 
 body {
-  font-family: ProximaNova, serif;
+  @extend %font-proxima;
   @extend %font14;
 }
 
@@ -112,12 +124,12 @@ body {
 }
 
 .navbar a {
-  font-family: ProximaNovaSemiBold, serif;
+  @extend %font-proxima-semibold;
   @extend %font16;
 }
 
 .navbar .dropdown-menu a {
-  font-family: ProximaNova, serif;
+  @extend %font-proxima;
   @extend %font14;
 }
 
@@ -125,7 +137,6 @@ body {
   @extend %font-playfair;
   font-style: italic;
   font-size: 22px;
-  color: #100c2a;
 }
 
 .main-footer {
@@ -135,9 +146,8 @@ body {
 }
 
 .photo-wrap figcaption {
-  font-family: ProximaNovaBold, serif;
+  @extend %font-proxima-bold;
   @extend %font18;
-  color: #080425;
 }
 
 .rent-slide-title {

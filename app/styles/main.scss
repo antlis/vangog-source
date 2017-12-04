@@ -1,7 +1,5 @@
 @import "imports";
 
-$header-height:  234px;
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -70,7 +68,7 @@ $header-height:  234px;
 }
 
 body {
-  color: #8f8e95;
+  color: $gray-text;
   transform: translate3d(0px, 0px, 0px);
   transition: all 700ms ease;
 }
@@ -138,7 +136,7 @@ body {
 }
 
 .carousel-content {
-  min-height: calc(100vh - 234px);
+  min-height: calc(100vh - #{$header-height});
   display: flex;
   padding-left: 10%;
   align-items: center;
@@ -156,16 +154,16 @@ body {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: transparent;
+    background: $transparent;
     cursor: pointer;
     position: relative;
-    border: 2px solid transparent;
+    border: 2px solid $transparent;
     transition: .3s;
     &.active {
       border: 2px solid $white;
     }
     &.active {
-      background: transparent;
+      background: $transparent;
     }
     &:after {
       content: " ";
@@ -205,8 +203,8 @@ body {
     content: " ";
     position: absolute;
     border-top: 0.3em solid $white;
-    border-right: 0.3em solid transparent;
-    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid $transparent;
+    border-left: 0.3em solid $transparent;
     bottom: -15px;
     left: 4px;
     
@@ -344,10 +342,10 @@ body {
 .btn-primary, a.btn-primary {
   color: $btn-color;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid $transparent;
   background: $inactive-orange;
   @include setLinkSelectorStyle {
-    border: 1px solid transparent;
+    border: 1px solid $transparent;
   }
   &:hover {
     color: $btn-hover;
@@ -388,7 +386,7 @@ body {
   a {
     text-decoration: underline;
     @include setLinkStyleAll {
-      color: #8f8e95;
+      color: $gray-text;
     }
     &:hover {
       text-decoration: none;
@@ -398,8 +396,8 @@ body {
 
 .btn-rent {
   height: 140px;
-  background: #fab91e;
-  color: #080425;
+  background: $inactive-orange;
+  color: $dark-blue;
   padding: 0 55px 0 75px;
   transition: .3s;
   @extend .row, .align-items-center;
@@ -408,8 +406,10 @@ body {
   }
   &:hover {
     text-decoration: none;
-    color: #080425;
-    background: #d39500;
+    background: $hover-orange;
+  }
+  @include setLinkStyleAll {
+    color: $dark-blue;
   }
 }
 
@@ -446,14 +446,14 @@ svg path  {
   p {
     margin: 0;
     &, a {
-       color: #080425; 
+       color: $dark-blue;
     }
     a {
       font-weight: bold;
       text-decoration: none;
-      border-bottom: 1px solid #fab91e;
+      border-bottom: 1px solid $inactive-orange;
       &:hover {
-        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid $transparent;
       }
     }
   }
@@ -500,7 +500,7 @@ svg path  {
     padding-left: 80px;
     &:before {
       content: " rent";
-      color: transparent;
+      color: $transparent;
       background: linear-gradient(180deg, 
         rgba(0,0,0,0) calc(50% - 1px), 
         #bfbfbf calc(50%), 
@@ -518,6 +518,10 @@ svg path  {
 .about-info {
   margin: auto auto 50px auto;
   @extend .col-10;
+}
+
+.section-sub-emphasis {
+  color: $dark-blue;
 }
 
 .photo-card {
@@ -548,9 +552,10 @@ svg path  {
   figcaption {
     position: absolute;
     width: 80%;
-    background: #fff;
+    background: $white;
     bottom: -45px;
     right: 0;
+    color: #080425;
     .photo-title {
       white-space: pre-line;
       padding-top: 40px;
@@ -568,7 +573,7 @@ svg path  {
       line-height: 44px;
       height: 44px;
       width: 44px;
-      text-align: center;
+      @extend .text-center;
       background: $inactive-orange;
       left: 0;
       margin-left: -44px;
@@ -636,7 +641,7 @@ svg path  {
   .navbar-dark .navbar-toggler {
     position: absolute;
     top: -105px;
-    border-color: transparent;
+    border-color: $transparent;
   }
   .header-top {
     margin: 0;
@@ -680,7 +685,7 @@ svg path  {
     padding: 30px 0;
   }
   .main-header {
-    height: 70px;
+    height: $header-height-mobile;
   }
   .carousel-content-inner {
     width: 100%;
@@ -698,7 +703,7 @@ svg path  {
   }
   .header-top {
     background: $dark-blue;
-    height: 70px;
+    height: $header-height-mobile;
   }
   .logo {
     padding: 0 15px;
@@ -723,6 +728,11 @@ svg path  {
   }
   .nav-logo-text {
     display: block;
+    a {
+      @include setLinkStyleAll {
+        color: $inactive-orange;
+      }
+    }
   }
   .mouse {
     left: auto;
@@ -732,7 +742,7 @@ svg path  {
   }
   .carousel-content {
     min-height: 450px;
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - #{$header-height-mobile});
   }
 }
 
@@ -760,7 +770,7 @@ svg path  {
     font-size: 34px;
   }
   .main-header {
-    height: 70px;
+    height: $header-height-mobile;
   }
   .slide-footer {
     .btn {
@@ -842,7 +852,6 @@ svg path  {
   }
 }
 
-
 // * iPad with landscape orientation.
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
   .page-top {
@@ -853,13 +862,12 @@ svg path  {
   }
 }
 
-
 // * iPhone 5
 @media screen and (device-aspect-ratio: 40/71) {
   .page-top {
     min-height: 568px;
   }
-  .carousel-content {
-    min-height: 924px;
-  }
+  // .carousel-content {
+  //   min-height: 924px;
+  // }
 }
